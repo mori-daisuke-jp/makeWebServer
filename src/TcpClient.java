@@ -7,8 +7,8 @@ public class TcpClient {
         int port = 8080; // Port number for the server
         try (Socket socket = new Socket(serverAddress, port)) {
              System.out.println("Connected to server at " + serverAddress + ":" + port);
-             FileInputStream fis = new FileInputStream("client_send.txt");
-             FileOutputStream fos = new FileOutputStream("client_receive.txt");
+             FileInputStream fis = new FileInputStream("../var/client_send.txt");
+             FileOutputStream fos = new FileOutputStream("../var/client_receive.txt");
     
              // send data from file to server
              OutputStream output = socket.getOutputStream();

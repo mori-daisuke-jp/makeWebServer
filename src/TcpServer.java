@@ -6,8 +6,8 @@ public class TcpServer {
         int port = 8080; // Port number for the server
         try (ServerSocket server = new ServerSocket(port)) {
             System.out.println("Server is listening on port " + port);
-            FileOutputStream fos = new FileOutputStream("server_receive.txt");
-            FileInputStream fis = new FileInputStream("server_send.txt");
+            FileOutputStream fos = new FileOutputStream("../var/server_receive.txt");
+            FileInputStream fis = new FileInputStream("../var/server_send.txt");
             System.out.println("Server is ready to receive files");
             Socket socket = server.accept(); // Accept a client connection
             System.out.println("Client connected");
