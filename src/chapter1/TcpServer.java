@@ -1,13 +1,15 @@
+package chapter1;
+
 import java.io.*;
 import java.net.*;
 
 public class TcpServer {
     public static void main(String[] args) {
-        int port = 8080; // Port number for the server
+        int port = 8001; // Port number for the server
         try (ServerSocket server = new ServerSocket(port)) {
             System.out.println("Server is listening on port " + port);
-            FileOutputStream fos = new FileOutputStream("../var/server_receive.txt");
-            FileInputStream fis = new FileInputStream("../var/server_send.txt");
+            FileOutputStream fos = new FileOutputStream("/home/horikawa/project/makeWebServer/var/server_receive.txt");
+            FileInputStream fis = new FileInputStream("/home/horikawa/project/makeWebServer/var/server_send.txt");
             System.out.println("Server is ready to receive files");
             Socket socket = server.accept(); // Accept a client connection
             System.out.println("Client connected");
@@ -26,6 +28,9 @@ public class TcpServer {
             socket.close();
             System.out.println("File received and sent successfully");
             
+            fis.close();
+            fos.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         } 

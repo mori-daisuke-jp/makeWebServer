@@ -1,0 +1,7 @@
+{
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/usr/share/java/tomcat9-servlet-api-9.0.31.jar"
+    ]
+}
